@@ -19,13 +19,13 @@ LiquidCrystal_I2C  lcd(0x27, 20, 4);
 // Wifi Name-password
 //const char* host = "jobm.edoclite.online";  //ใส่ IP หรือ Host ของเครื่อง Database ก็ได้
 ////////////////////////////////////////////////////////////////////////////////////
+/*
 char* ssid = "ThepokKung_reset"; //Wifi Name
 char* password = "thepokkung"; //Wifi Password
+*/
 ////////////////////////////////////////////////////////////////////////////////////
-/*
   char* ssid = "RSRC2"; //Wifi Name
   char* password = "043234794"; //Wifi Password
-*/
 ////////////////////////////////////////////////////////////////////////////////////
 //MQTT connected
 //Test server
@@ -86,7 +86,7 @@ void setup() {
   delay(3000);
 
   dht.begin();
-  Serial.begin(9600);
+  Serial.begin(115200);
   PM.init(16, 36);
 
   //Login all
@@ -131,7 +131,7 @@ void setupwifi() {
   lcd.print(ssid);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    delay(1500);
     Serial.print(".");
   }
 
